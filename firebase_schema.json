@@ -1,0 +1,33 @@
+{
+  "collections": [
+    {
+      "name": "quiz_results",
+      "documents": [
+        {
+          "fields": {
+            "username": { "type": "string" },
+            "date": { "type": "string" },
+            "score": { "type": "number" },
+            "total_questions": { "type": "number" },
+            "answers": {
+              "type": "map",
+              "fields": {
+                "0": { "type": "string" },
+                "1": { "type": "string" },
+                "..." : { "type": "string" }
+              }
+            },
+            "correct_answers": {
+              "type": "map",
+              "fields": {
+                "0": { "type": "string" },
+                "1": { "type": "string" },
+                "..." : { "type": "string" }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
