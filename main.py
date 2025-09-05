@@ -3,7 +3,9 @@ from typing import List, Dict, Any
 from google.cloud import firestore
 
 # Pre-configured database client
-db = firestore.Client(database=__app_id__)
+# 'database=__app_id__' kısmını kaldırarak Firestore'un
+# ortam değişkenlerinden proje kimliğini otomatik almasını sağlıyoruz.
+db = firestore.Client()
 collection_ref = db.collection("quiz_results")
 
 def fetch_questions(exam_name: str) -> List[Dict[str, Any]]:
